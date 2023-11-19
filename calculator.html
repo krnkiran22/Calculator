@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html> 
+   <head> 
+      <script>  
+         function dis(val) 
+         { 
+             document.getElementById("result").value+=val 
+         } 
+         
+        function solve() {
+  let x = document.getElementById("result").value;
+  
+  try {
+    let y = eval(x);
+    
+    if (isNaN(y) || !isFinite(y)) {
+      throw new Error("Invalid input");
+    }
+    
+    document.getElementById("result").value = y;
+  } catch (error) {
+    document.getElementById("result").value = "Error";
+  }
+} 
+         function clr() 
+         { 
+             document.getElementById("result").value = "" 
+         } 
+      </script> 
+      
+      <style> 
+      body{
+        padding-top: 5%;
+        background: rgb(204, 251, 241);
+        
+
+      }
+         .title{ 
+            border-radius: 50px;
+         margin-bottom: 10px; 
+         text-align:center; 
+         width: 600px; 
+         color:#ffffff; 
+         background:#192655 ;
+         border: solid black 3px; 
+         } 
+       
+
+         input[type="button"] 
+         { 
+            background-color: #3876BF;
+        
+
+         color: white; 
+         border: border  black 2px; 
+         width:148px; 
+         height: 80px;
+         border-radius: 50px;
+         
+
+         } 
+         #result{
+            height: 80px;
+         }
+  
+         input[type="text"] 
+         { 
+         background-color:white; 
+         border: solid black 2px; 
+         border-radius: 50px;
+         width:100% 
+         
+         } 
+      </style> 
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
+   </head> 
+   <body> 
+    <center>
+      <div class = title > <h1 class="text-5xl p-4">Calculator</h1></div> <br>
+      <table border="1"> 
+         <tr> 
+            <td colspan="3"><input class="text-4xl" type="text" id="result"/></td> 
+            <td><input class="text-3xl" type="button" value="c" onclick="clr()"/> </td> 
+         </tr> 
+         <tr>
+            <td><input class="text-3xl"  type="button" value="1" onclick="dis('1')"/> </td> 
+            <td><input class="text-3xl" type="button" value="2" onclick="dis('2')"/> </td> 
+            <td><input class="text-3xl" type="button" value="3" onclick="dis('3')"/> </td> 
+            <td><input class="text-3xl" type="button" value="/" onclick="dis('/')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input class="text-3xl" type="button" value="4" onclick="dis('4')"/> </td> 
+            <td><input class="text-3xl" type="button" value="5" onclick="dis('5')"/> </td> 
+            <td><input class="text-3xl" type="button" value="6" onclick="dis('6')"/> </td> 
+            <td><input class="text-3xl" type="button" value="-" onclick="dis('-')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input class="text-3xl" type="button" value="7" onclick="dis('7')"/> </td> 
+            <td><input class="text-3xl" type="button" value="8" onclick="dis('8')"/> </td> 
+            <td><input class="text-3xl" type="button" value="9" onclick="dis('9')"/> </td> 
+            <td><input class="text-3xl" type="button" value="+" onclick="dis('+')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input class="text-3xl" type="button" value="." onclick="dis('.')"/> </td> 
+            <td><input class="text-3xl" type="button" value="0" onclick="dis('0')"/> </td> 
+            <td><input class="text-3xl " type="button" value="=" onclick="solve()"/> </td> 
+            
+            <td><input class="text-3xl " type="button" value="*" onclick="dis('*')"/> </td> 
+         </tr> 
+      </table> 
+      </center>
+   </body> 
+</html>
